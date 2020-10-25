@@ -4,7 +4,7 @@
 #Author : Kaustubh Padwad
 #copyright : copyright (c) 2015 Kaustubh Padwad
 #Licnse :- Gnu-GPL-3
-Set-ExecutionPolicy -ExecutionPolicy restricted -force
+#####Set-ExecutionPolicy -ExecutionPolicy restricted -force ## This stops anything else running... #gergnz
 echo "1 Checks for Computer Configuration"
 echo "1.1 Security Settings"
 echo "1.1.1 Account Policies" > audit.txt
@@ -547,7 +547,7 @@ echo "1.1.3.7.2 Configure 'Interactive logon: Message text for users attempting 
 echo "Interactive logon: Message text for users attempting to log on'" >> audit.txt
 $a = "Interactive logon: Message text for users attempting to log on'  -----------> "
 $b = reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" | findstr /i "legalnoticetext"
-$a += if ($b -match "****") {echo "compliance"} else {echo "Non compliance"}
+$a += if ($b -match "REG_SZ.....") {echo "compliance"} else {echo "Non compliance"}
 write-output $a
 
 echo "1.1.3.7.3 Configure 'Interactive logon: Message title for users attempting to log on'" 
