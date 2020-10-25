@@ -4,6 +4,9 @@ NAME
        Windows_Auditor.ps1 - Audit the windows and gives a handy result
 
 SYNOPSIS
+```
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/gergnz/windows_auditor/master/Windows_Auditor.ps1 | select -ExpandProperty Content | Out-File Windows_Auditor.ps1
+```
        ./Windows_Auditor.ps1 > Report.txt
 
 DESCRIPTION
